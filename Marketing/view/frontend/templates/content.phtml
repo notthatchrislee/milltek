@@ -1,0 +1,33 @@
+
+<?php 
+ 
+
+
+ if ($block->isCustomerLoggedIn()){
+
+	echo $this->getLayout()
+	->createBlock('Magento\Cms\Block\Block')
+	->setBlockId('marketing_materials')
+	->toHtml();
+ 
+ }
+ else {
+	 ?>
+
+	  <script>
+
+	  window.location.href = "<?php echo $this->getBaseUrl() ; ?>/restricted";
+	  
+
+	  </script>
+	 
+	 <?php
+		 
+ }
+
+
+?>
+
+
+
+	
